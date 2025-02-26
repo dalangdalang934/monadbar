@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <span>Gas Transfer</span>
+            </div>
+            <button id="connect-wallet" class="button">Connect Wallet</button>
+        </nav>
+
+        <main class="main-content">
+            <div class="card">
+                <h1>Gas Transfer</h1>
+                <div class="form-group">
+                    <label for="chain-select">Select Chain</label>
+                    <select id="chain-select" class="select-input">
+                        <option value="arbitrum">Arbitrum</option>
+                        <option value="base">Base</option>
+                        <option value="optimism">Optimism</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>ETH Amount</label>
+                    <div class="input-group">
+                        <input type="number" id="eth-amount" min="0.0001" max="1" step="0.0001" placeholder="0.00">
+                        <span class="input-unit">ETH</span>
+                    </div>
+                    <div class="amount-limits">Min: 0.0001 ETH&nbsp;&nbsp;&nbsp;Max: 1 ETH</div>
+                </div>
+
+                <div class="form-group">
+                    <label>You will receive</label>
+                    <div class="input-group">
+                        <input type="text" id="monad-amount" readonly value="0.00">
+                        <span class="input-unit">MON</span>
+                    </div>
+                </div>
+
+                <div class="network-info">
+                    <div class="info-row">
+                        <span class="label">Network</span>
+                        <span class="value" id="network-name">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Gas Price</span>
+                        <span class="value" id="gas-price">-</span>
+                    </div>
+                </div>
+
+                <button id="transfer-btn" class="button button-primary" disabled>
+                    Transfer
+                </button>
+            </div>
+
+            <div class="inventory-panel">
+                <h2>Available MON</h2>
+                <div class="inventory-items">
+                    <div class="inventory-item">
+                        <span class="chain-name">Contract</span>
+                        <div class="inventory-details">
+                            <span class="address-display">0x9d03...D6A</span>
+                        </div>
+                    </div>
+                    <div class="inventory-item">
+                        <span class="chain-name">Available</span>
+                        <div class="inventory-details">
+                            <span class="inventory-amount" id="monad-balance">Loading...</span>
+                            <span class="inventory-unit">MON</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p> 2025 All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="notification" class="notification">
+        <span class="notification-message"></span>
+        <button class="close-btn">&times;</button>
+    </div>
+
+    <a href="https://t.me/GasTransfer" target="_blank" class="support-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12h-4"></path>
+        </svg>
+        Support
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
